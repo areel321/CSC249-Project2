@@ -9,7 +9,7 @@ def Attack():
         mySocket = socket(AF_INET, SOCK_STREAM)
         myPort = 1024
         mySocket.connect(("131.229.158.218", myPort))
-        mySocket.send(b"\Hello".encode())
+        mySocket.send(b"Hello")
         messageSent+1
         print(messageSent)
         Attack()
